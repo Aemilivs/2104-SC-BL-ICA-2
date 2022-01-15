@@ -1,0 +1,116 @@
+{"bertramka":
+    {"wc": true,
+     "attractions": "cultural monument, classical music concerts, social events, W. A. ​​Mozart Museum",
+     "biking": true,
+     "skating": false,
+     "sports": false,
+     "playground": false,
+     "parking": true},
+
+"frantiskanska-zahrada":
+    {"wc": true,
+    "attractions": "Church of Our Lady of the Snows",
+    "biking": true,
+    "skating": false,
+    "sports": false,
+    "playground": true,
+    "dogs": false,
+    "parking": false},
+
+"obora-hvezda":
+    {"wc": true,
+    "attractions": "memorial trees, nature trail, nature attractions",
+    "biking": true,
+    "skiing": true,
+    "skating": false,
+    "sports": false,
+    "playground": true,
+    "dogs": true,
+    "parking": true},
+
+"kampa":
+    {"wc": true,
+    "attractions": "view of the Vltava, Sovovy Mlýny Gallery, Čertovka, Charles Bridge, Werich House, memorial trees.",
+    "biking": true,
+    "skating": true,
+    "sports": false,
+    "playground": true,
+    "parking": false},
+
+"kinskeho-zahrada":
+    {"wc": true,
+    "attractions": "museum,ornamental lakes, natural attraction - Petrin Rocks.",
+    "biking": false,
+    "skating": false,
+    "sports": false,
+    "playground": true,
+    "parking": true},
+
+"klamovka":
+    {"wc": true,
+    "attractions": "art gallery, historical attractions, music club, garden restaurant.",
+    "biking": true,
+    "skating": false,
+    "sports": true,
+    "dogs": true,
+    "playground": true,
+    "parking": false},
+    
+"ladronka":
+    {"wc": true,
+    "attractions": "extensive leisure area, music and entertainment events",
+    "biking": true,
+    "skating": true,
+    "sports": false,
+    "playground": true,
+    "dogs": true,
+    "parking": true},
+    
+"letna":
+    {"wc": true,
+    "attractions": "extensive leisure area, cultural events",
+    "biking": true,
+    "skating": true,
+    "sports": "777 789 140",
+    "playground": true,
+    "dogs": true,
+    "parking": true},
+    
+"petrin":
+    {"wc": true,
+    "attractions": "lookout tower, maze, observatory, underground galleries and fruit orchards",
+    "biking": true,
+    "skating": true,
+    "sports": false,
+    "playground": true,
+    "parking": true},
+    
+"riegrovy-sady":
+    {"wc": true,
+    "attractions": "view of Prague, classicist lookout tower, three-sided obelisk",
+    "biking": true,
+    "skating": true,
+    "sports": true,
+    "playground": true,
+    "dogs": true,
+    "parking": false},
+    
+"stromovka":
+    {"wc": true,
+    "attractions": "zoo, botanical gardens, natural attractions, planetarium, exhibition grounds",
+    "biking": true,
+    "skating": true,
+    "sports": true,
+    "playground": true,
+    "dogs": true,
+    "parking": true},
+    
+"vysehrad":
+    {"wc": true,
+    "attractions": "sightseeing, museum, cemetery of famous personalities Slavín, national cultural monument",
+    "biking": true,
+    "skating": false,
+    "sports": true,
+    "playground": true,
+    "parking": true}}
+
