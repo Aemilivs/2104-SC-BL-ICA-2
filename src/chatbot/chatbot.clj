@@ -160,3 +160,29 @@
         process-decision-tree
     )
 )
+
+(
+    defn is-exit-sequence
+    "Define whether the input is an exit sequence or not"
+    [input]
+    (
+        let
+        [
+            words
+            (
+                clojure.string/split 
+                    input 
+                    #" "
+            )
+        ]
+        (
+            if (> (count words) 1)
+                false
+                (
+                    contains?
+                        data/exit-words
+                        (first words)
+                )
+        )
+    )
+)
