@@ -3,6 +3,7 @@
         chatbot.chatbot
         (:require clojure.string)
         (:require [chatbot.decision-tree :as decision-tree])
+        (:require [chatbot.responses :as data])
 )
 
 (
