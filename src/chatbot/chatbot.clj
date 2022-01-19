@@ -21,6 +21,26 @@
 )
 
 (
+	defn greed
+  	"Return user name"
+  	[]
+  	(
+    println "Hello! What is your name?"
+  	)
+  	(
+    let 
+    [
+     input (
+            read-line
+            )
+     ]
+     (
+      println "Hello, " input
+      )
+    )
+)
+
+(
     defn write-question
     "Print a question for a user in the CLI"
     [node]
