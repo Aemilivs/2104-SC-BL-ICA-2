@@ -49,15 +49,6 @@
 )
 
 (
-    defn read-answer
-    "Read an answer from a user from the CLI"
-    []
-    (
-        clojure.string/lower-case (read-line)
-    )
-)
-
-(
     defn recognize-response
     "Recognize whether the input is corresponding to given set of words."
     [
@@ -136,6 +127,40 @@
         recognize-response
             input
             chatbot.data/exit-words
+    )
+)
+
+(
+    defn read-answer
+    "Read an answer from a user from the CLI"
+    []
+    (
+        let
+        [
+            answer 
+            (
+                clojure.string/lower-case (read-line)
+            )
+        ]
+        (
+            if
+                (
+                    is-exit-sequence answer
+                )
+                (
+                    do
+                    (
+                        println "Thank you for spending your time with me."
+                    )
+                    (
+                        Thread/sleep (rand-int 1250)
+                    )
+                    (
+                        System/exit 0
+                    )
+                )
+                answer
+        )
     )
 )
 
@@ -237,7 +262,13 @@
         (
             do
             (
+                Thread/sleep (rand-int 500)
+            )
+            (
                 greet
+            )
+            (
+                Thread/sleep (rand-int 500)
             )
             (
                 println
@@ -246,7 +277,10 @@
                 )
             )
             (
-                Thread/sleep (rand-int 1250)
+                println "If you intend to quit, please type 'quit'."
+            )
+            (
+                Thread/sleep (rand-int 500)
             )
             (
                 loop
@@ -256,7 +290,7 @@
                 (
                     do
                     (
-                        Thread/sleep (rand-int 1250)
+                        Thread/sleep (rand-int 500)
                     )
                     (
                         if
@@ -295,6 +329,15 @@
                                     answer
                                     (
                                         recur (tree "root")
+                                    )
+                                    (
+                                        do
+                                        (
+                                            println "Thank you for spending your time with me."
+                                        )
+                                        (
+                                            System/exit 0
+                                        )
                                     )
                                 )
                             )
