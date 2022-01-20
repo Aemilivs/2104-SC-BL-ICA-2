@@ -3,6 +3,7 @@
         chatbot.chatbot
         (:require clojure.string)
         (:require [chatbot.decision-tree :as decision-tree])
+        (:require chatbot.data)
 )
 
 (
@@ -39,6 +40,146 @@
 )
 
 (
+    defn recognize-response
+    "Recognize whether the input is corresponding to given set of words."
+    [
+        input
+        collection
+    ]
+    (
+        let
+        [
+            words
+            (
+                clojure.string/split 
+                    input 
+                    #" "
+            )
+        ]
+        (
+            if 
+            (
+                < 
+                    (count words) 
+                    1
+            )
+            false
+            (
+                not
+                (
+                    nil?
+                        (
+                            some
+                            (
+                                fn
+                                [word]
+                                (
+                                    some
+                                        #(= % word)
+                                        collection
+                                )
+                            )
+                            words
+                        )
+                )
+            )
+        )
+    )
+)
+
+(
+    defn is-negative-response
+    "Define whether the input is a negative response or not."
+    [input]
+    (
+        recognize-response
+            input
+            chatbot.data/negative-responses
+    )
+)
+
+
+(
+    defn is-positive-response
+    "Define whether the input is a positive response or not."
+    [input]
+    (
+        recognize-response
+            input
+            chatbot.data/positive-responses
+    )
+)
+
+(
+    defn is-exit-sequence
+    "Define whether the input is an exit sequence or not"
+    [input]
+    (
+        recognize-response
+            input
+            chatbot.data/exit-words
+    )
+)
+
+(
+    defn parse-answer
+    "Parse the response in order to definitive boolean response from the user."
+    []
+    (
+        loop
+        [
+            answer (read-answer)
+        ]
+        (
+            let
+            [
+                answer-is-positive (is-positive-response answer)
+                answer-is-negative (is-negative-response answer)
+            ]
+            (
+                do
+                (
+                    if
+                    (
+                        or
+                        (
+                            and
+                                answer-is-positive 
+                                answer-is-negative
+                        )
+                        (
+                            not
+                            (
+                                or
+                                    answer-is-positive
+                                    answer-is-negative
+                            )
+                        )
+                    )
+                    (
+                        do
+                        (
+                            Thread/sleep (rand-int 1250)
+                        )
+                        (
+                            println "I am sorry, I coulnd't understand your answer. Could you please rephrase it?"
+                        )
+                        (
+                            recur (read-answer)
+                        )
+                    )
+                    (
+                        or
+                            answer-is-positive
+                            (not answer-is-negative)
+                    )
+                )
+            )
+        )
+    )
+)
+
+(
     defn process-node
     "Process a node."
     [node]
@@ -50,15 +191,11 @@
         (
             let
             [
-                answer (read-answer)
+                answer (parse-answer)
             ]
             (
                 if
-                (
-                    =
-                        answer
-                        "yes"
-                )
+                answer
                 (
                     node "left"
                 )
@@ -130,15 +267,11 @@
                             (
                                 let
                                 [
-                                    answer (read-answer)
+                                    answer (parse-answer)
                                 ]
                                 (
                                     if
-                                    (
-                                        =
-                                            answer
-                                            "yes"
-                                    )
+                                    answer
                                     (
                                         recur (tree "root")
                                     )
