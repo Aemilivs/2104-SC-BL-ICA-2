@@ -11,7 +11,7 @@
     [tree]
     (
         format
-            "Hello! I am a chatbot designed to help you in identifying %s.\nPlease answer to the questions with 'yes' and 'no', so that I can give you the most precise answer."
+            "I am a chatbot designed to help you in identifying %s.\nPlease answer to the questions with 'yes' and 'no', so that I can give you the most precise answer."
             (
                 get
                     tree
@@ -21,22 +21,20 @@
 )
 
 (
-	defn greed
+	defn greet
   	"Return user name"
   	[]
   	(
-    println "Hello! What is your name?"
+        println "Hello! What is your name?"
   	)
   	(
     let 
     [
-     input (
-            read-line
-            )
-     ]
-     (
-      println "Hello, " input
-      )
+        input (read-line)
+    ]
+    (
+        println "Welcome, " input "!"
+    )
     )
 )
 
@@ -101,6 +99,9 @@
         ]
         (
             do
+            (
+                greet
+            )
             (
                 println
                 (
