@@ -1,17 +1,59 @@
 {
     "topic": "birds",
     "root": {
-        "query": "Is this bird big?",
+        "query": "Is the colour of the bird you see black?",
         "left": {
-            "result": "Emu"
-        },
-        "right": {
-            "query": "Is this bird black?",
+            "query": "Is the bird big?",
             "left": {
-                "result": "Crow"
+                "query": "Does it have a grey head?",
+                "left": {
+                    "result": "Then it's probably a jackdaw."
+                },
+                "right": {
+                    "result": "Then it's most probably a crow."
+                }
             },
             "right": {
-                "result": "Hen"
+                "query": "Does it have a dark beak?",
+                "left": {
+                    "result": "Then it's probably some kind of a blackbird."
+                },
+                "right": {
+                    "result": "Then it could be a starling."
+                }
+            }
+        },
+        "right": {
+            "query": "Is the colour of the bird you see white?",
+            "left": {
+                "query": "Is the bird big?",
+                "left": {
+                    "query": "Is it swimming on a water surface?",
+                    "left": {
+                        "result": "Then it's gotta be a swan."
+                    },
+                    "right": {
+                        "result": "Then it's most probably a white stork."
+                    }
+                },
+                "right": {
+                    "result": "That could be a gull."
+                }
+            },
+            "right": {
+                "query": "Is the colour of the bird you see brown?",
+                "left": {
+                    "query": "Is the bird big?",
+                    "left": {
+                        "result": "Then it could be a swift."
+                    },
+                    "right": {
+                        "result": "Then I would guess it is a chiffchaff."
+                    }
+                },
+                "right": {
+                    "result": "Then I'm afraid I won't be able to guess which bird you see."
+                }
             }
         }
     }
