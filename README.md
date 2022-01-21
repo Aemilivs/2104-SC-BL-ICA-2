@@ -74,7 +74,7 @@ The resulting application testing was performed both manually in Leiningen REPL 
 
 The result of manual test run:
 
-![Image](img/test_run1.png)
+![Image](img/test_run1.jpg)
 
 The result of running Leiningen test files:
 
