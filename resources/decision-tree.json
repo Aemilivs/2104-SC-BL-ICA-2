@@ -1,8 +1,8 @@
 {
     "topic": "birds",
     "root": {
-        "query": "What is the color of the bird you see?",
-        "black": {
+        "query": "Is the colour of the bird you see black?",
+        "left": {
             "query": "Is the bird big?",
             "left": {
                 "query": "Does it have a grey head?",
@@ -23,28 +23,37 @@
                 }
             }
         },
-        "white": {
-            "query": "Is the bird big?",
+        "right": {
+            "query": "Is the colour of the bird you see white?",
             "left": {
-                "query": "Is it swimming on a water surface?",
+                "query": "Is the bird big?",
                 "left": {
-                    "result": "Then it's gotta be a swan."
+                    "query": "Is it swimming on a water surface?",
+                    "left": {
+                        "result": "Then it's gotta be a swan."
+                    },
+                    "right": {
+                        "result": "Then it's most probably a white stork."
+                    }
                 },
                 "right": {
-                    "result": "Then it's most probably a white stork."
+                    "result": "That could be a gull."
                 }
             },
             "right": {
-                "result": "That could be a gull."
-            }
-        },
-        "brown": {
-            "query": "Is the bird big?",
-            "left": {
-                "result": "Then it could be a swift."
-            },
-            "right": {
-                "result": "Then I would guess it is a chiffchaff."
+                "query": "Is the colour of the bird you see brown?",
+                "left": {
+                    "query": "Is the bird big?",
+                    "left": {
+                        "result": "Then it could be a swift."
+                    },
+                    "right": {
+                        "result": "Then I would guess it is a chiffchaff."
+                    }
+                },
+                "right": {
+                    "result": "Then I'm afraid I won't be able to guess which bird you see."
+                }
             }
         }
     }

@@ -349,7 +349,11 @@
     )
 )
 
-(defn process
-  "Process the text input and respond using pattern matchinng rules."
-  []
-  (process-decision-tree))
+(
+    defn process
+    "Process the text input and respond using pattern matchinng rules."
+    []
+    (
+        process-decision-tree
+    )
+)
